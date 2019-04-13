@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "boilerplate for fullstack js app",
   "repository": {
-	"type": "git",
-	"url": "https://github.com/DropTheLogic/boilermaker"
+    "type": "git",
+    "url": "https://github.com/DropTheLogic/boilermaker"
   },
   "main": "index.js",
   "scripts": {
+	"start": "node server",
+	"start-dev": "webpack -w & node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,7 +19,10 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

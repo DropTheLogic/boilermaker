@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use(express.bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // API Routes
@@ -15,7 +15,7 @@ app.use('/api', require('./apiRoutes'));
 
 // Main entrypoint
 app.get('*', (req, res, next) => {
-	res.sendFile(path.join(__dirname, '../index.html'));
+	res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 // 500 catches
@@ -31,5 +31,11 @@ app.use((err, req, res, next) => {
  **************/
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-	console.log(`server listening on port ${port}`);
+	console.log(`
+
+	Listening on port ${port}
+
+	http://localhost:${port}/
+
+`);
 });
